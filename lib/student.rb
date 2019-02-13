@@ -79,4 +79,4 @@ def self.all
       self.new_from_db(row)
     end
   end	  
-  END
+end
