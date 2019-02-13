@@ -68,7 +68,8 @@ def self.new_from_db(row)
   new_student.name =  row[1]
   new_student.grade = row[2]
   new_student
-end	  
+end	
+
 def self.all
     # retrieve all the rows from the "Students" database	    # retrieve all the rows from the "Students" database
     sql = <<-SQL
@@ -79,7 +80,7 @@ def self.all
       self.new_from_db(row)
     end
   end	  
-end
+
  def self.find_by_name(name)
     # find the student in the database given a name	    # find the student in the database given a name
     sql = <<-SQL
