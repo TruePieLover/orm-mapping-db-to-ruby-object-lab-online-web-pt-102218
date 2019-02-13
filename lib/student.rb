@@ -69,3 +69,14 @@ def self.new_from_db(row)
   new_student.grade = row[2]
   new_student
 end	  
+def self.all
+    # retrieve all the rows from the "Students" database	    # retrieve all the rows from the "Students" database
+    sql = <<-SQL
+      SELECT *
+      FROM students
+    SQL
+    DB[:conn].execute(sql).map do |row|
+      self.new_from_db(row)
+    end
+  end	  
+  END
